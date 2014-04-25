@@ -1,0 +1,15 @@
+[submodule "bundle/emmet-vim"]
+	path = bundle/emmet-vim
+	url = https://github.com/mattn/emmet-vim.git
+[submodule "bundle/nerdcommenter"]
+	path = bundle/nerdcommenter
+	url = https://github.com/scrooloose/nerdcommenter.git
+[submodule "bundle/nerdtree"]
+	path = bundle/nerdtree
+	url = https://github.com/scrooloose/nerdtree.git
+[submodule "bundle/vim-css3-syntax"]
+	path = bundle/vim-css3-syntax
+	url = https://github.com/hail2u/vim-css3-syntax.git
+[submodule "bundle/vim-stylus"]
+	path = bundle/vim-stylus
+	url = git://github.com/wavded/vim-stylus.git
