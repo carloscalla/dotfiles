@@ -10,6 +10,8 @@ set expandtab
 set list
 set listchars=eol:¬,tab:\ \ 
 
+let mapleader = ","
+
 filetype plugin on
 
 " An example for a vimrc file.
