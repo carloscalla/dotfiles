@@ -13,6 +13,8 @@ set listchars=eol:¬,tab:\ \
 let mapleader = ","
 
 filetype plugin on
+filetype plugin indent on
+syntax on
 
 " An example for a vimrc file.
 "
