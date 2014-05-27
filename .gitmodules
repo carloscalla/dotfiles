@@ -19,3 +19,6 @@
 [submodule "bundle/python-mode"]
 	path = bundle/python-mode
 	url = git://github.com/klen/python-mode.git
+[submodule "bundle/vim-easymotion"]
+	path = bundle/vim-easymotion
+	url = https://github.com/Lokaltog/vim-easymotion
