@@ -1,5 +1,8 @@
 execute pathogen#infect()
 
+scriptencoding utf-8
+set encoding=utf-8
+
 set number
 
 set tabstop=4
@@ -7,14 +10,29 @@ set shiftwidth=4
 set softtabstop=4
 set expandtab
 
+" colorscheme desert
+
 set list
 set listchars=eol:¬,tab:\ \ 
 
 let mapleader = ","
 
+" set runtimepath^=~/vimfiles/bundle/ctrlp.vim
+
+nnoremap ,cd :cd %:p:h<CR>:pwd<CR>
+
+:cd ~
+
 filetype plugin on
 filetype plugin indent on
 syntax on
+
+
+
+
+
+
+
 
 " An example for a vimrc file.
 "
