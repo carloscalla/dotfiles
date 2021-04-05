@@ -34,6 +34,7 @@ Plugin 'VundleVim/Vundle.vim'
 
 " All of your Plugins must be added before the following line
 
+Plugin 'tpope/vim-fugitive'
 Plugin 'https://github.com/mattn/emmet-vim.git'
 Plugin 'https://github.com/scrooloose/nerdcommenter.git'
 Plugin 'https://github.com/scrooloose/nerdtree.git'
@@ -48,6 +49,8 @@ Plugin 'https://tpope.io/vim/repeat.git'
 Plugin 'https://tpope.io/vim/surround.git'
 Plugin 'https://tpope.io/vim/commentary.git'
 Plugin 'https://github.com/ycm-core/YouCompleteMe.git'
+Plugin 'https://github.com/jremmen/vim-ripgrep'
+Plugin 'mbbill/undotree'
 
 " Plugin 'git://github.com/wavded/vim-stylus.git'
 " Plugin 'git://git.wincent.com/command-t.git'
@@ -124,6 +127,32 @@ nnoremap <leader>cd :cd %:p:h<CR>:pwd<CR>
 nnoremap <leader>t :NERDTreeToggle<CR>
 nnoremap <leader>fi :NERDTreeFind<CR>
 nnoremap <leader>fo :NERDTreeFocus<CR>
+
+nnoremap <silent> <Leader>gd :YcmCompleter GoTo<CR>
+nnoremap <silent> <Leader>gf :YcmCompleter FixIt<CR>
+
+nnoremap <leader>u :UndotreeToggle<CR>
+
+nnoremap <leader># :e#<CR>
+
+nnoremap <leader>wh <C-W>h
+nnoremap <leader>wj <C-W>j
+nnoremap <leader>wk <C-W>k
+nnoremap <leader>wl <C-W>l
+nnoremap <leader>ww <C-W>w
+nnoremap <leader>wL <C-W>L
+nnoremap <leader>wH <C-W>H
+nnoremap <leader>wK <C-W>K
+nnoremap <leader>wJ <C-W>J
+nnoremap <leader>wq <C-W>q
+
+nnoremap <leader>y "+y
+vnoremap <leader>y "+y
+nnoremap <leader>Y gg"+yG
+
+set undodir=~/.vim/.undo//
+set backupdir=~/.vim/.backup//
+set directory=~/.vim/.swp//
 
 " filetype plugin on
 " filetype plugin indent on
@@ -238,4 +267,3 @@ if !exists(":DiffOrig")
   command DiffOrig vert new | set bt=nofile | r ++edit # | 0d_ | diffthis
 		  \ | wincmd p | diffthis
 endif
-
