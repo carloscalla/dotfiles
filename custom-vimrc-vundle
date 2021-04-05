@@ -52,6 +52,8 @@ Plugin 'https://github.com/ycm-core/YouCompleteMe.git'
 Plugin 'https://github.com/jremmen/vim-ripgrep'
 Plugin 'mbbill/undotree'
 
+" Plugin 'https://github.com/stefandtw/quickfix-reflector.vim'
+
 " Plugin 'git://github.com/wavded/vim-stylus.git'
 " Plugin 'git://git.wincent.com/command-t.git'
 " Plugin 'git://github.com/klen/python-mode.git'
@@ -79,7 +81,6 @@ set encoding=utf-8
 
 set wildmenu
 
-set number relativenumber
 
 augroup numbertoggle
   autocmd!
@@ -87,16 +88,35 @@ augroup numbertoggle
   autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
 augroup END
 
+
+set exrc
+set guicursor=
+set number relativenumber
+set hidden
+set noerrorbells
+
 set tabstop=2
 set shiftwidth=2
 set softtabstop=2
 set expandtab
+set nowrap
+set undofile
 
 set splitbelow
 set splitright
 
 set ignorecase
 set smartcase
+set smartindent
+set scrolloff=4
+set signcolumn=yes
+
+set history=50		" keep 50 lines of command line history
+set ruler		" show the cursor position all the time
+set showcmd		" display incomplete commands
+set incsearch		" do incremental searching
+" allow backspacing over everything in insert mode
+set backspace=indent,eol,start
 
 colorscheme desert
 
@@ -128,12 +148,20 @@ nnoremap <leader>t :NERDTreeToggle<CR>
 nnoremap <leader>fi :NERDTreeFind<CR>
 nnoremap <leader>fo :NERDTreeFocus<CR>
 
+nnoremap <leader>ps :Rg<SPACE>
+
 nnoremap <silent> <Leader>gd :YcmCompleter GoTo<CR>
 nnoremap <silent> <Leader>gf :YcmCompleter FixIt<CR>
 
 nnoremap <leader>u :UndotreeToggle<CR>
 
+nnoremap <leader>b :CtrlPBuffer<CR>
+
 nnoremap <leader># :e#<CR>
+
+if executable('rg')
+  let g:rg_command='rg --vimgrep -S'
+endif
 
 nnoremap <leader>wh <C-W>h
 nnoremap <leader>wj <C-W>j
@@ -187,22 +215,11 @@ if v:progname =~? "evim"
   finish
 endif
 
-" Use Vim settings, rather than Vi settings (much better!).
-" This must be first, because it changes other options as a side effect.
-set nocompatible
-
-" allow backspacing over everything in insert mode
-set backspace=indent,eol,start
-
 if has("vms")
   set nobackup		" do not keep a backup file, use versions instead
 else
   set backup		" keep a backup file
 endif
-set history=50		" keep 50 lines of command line history
-set ruler		" show the cursor position all the time
-set showcmd		" display incomplete commands
-set incsearch		" do incremental searching
 
 " For Win32 GUI: remove 't' flag from 'guioptions': no tearoff menu entries
 " let &guioptions = substitute(&guioptions, "t", "", "g")
@@ -267,3 +284,5 @@ if !exists(":DiffOrig")
   command DiffOrig vert new | set bt=nofile | r ++edit # | 0d_ | diffthis
 		  \ | wincmd p | diffthis
 endif
+
+
