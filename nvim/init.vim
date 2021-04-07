@@ -116,7 +116,7 @@ nnoremap <leader>tc :Telescope<SPACE>
 
 
 " NERDTree
-nnoremap <leader>t :NERDTreeToggle<CR>
+nnoremap <leader>nt :NERDTreeToggle<CR>
 nnoremap <leader>fi :NERDTreeFind<CR>
 nnoremap <leader>fo :NERDTreeFocus<CR>
 
