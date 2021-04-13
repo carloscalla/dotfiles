@@ -52,9 +52,9 @@ set backspace=indent,eol,start
 set list
 set listchars=eol:¬,tab:\ \ 
 
-let mapleader = ","
+let mapleader = " "
 
-nnoremap <leader>so :source ~/.config/nvim/init.vim<CR>
+nnoremap <leader>so :source $MYVIMRC<CR>
 nnoremap <leader>cd :cd %:p:h<CR>:pwd<CR>
 nnoremap <leader># :e#<CR>
 
@@ -68,6 +68,8 @@ nnoremap <leader>wH <C-W>H
 nnoremap <leader>wK <C-W>K
 nnoremap <leader>wJ <C-W>J
 nnoremap <leader>wq <C-W>q
+
+tnoremap <Esc> <C-\><C-n>
 
 nnoremap <leader>y "+y
 vnoremap <leader>y "+y
@@ -95,6 +97,8 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'https://github.com/neoclide/vim-jsx-improve'
 Plug 'https://github.com/MaxMEllon/vim-jsx-pretty'
 Plug 'kyazdani42/nvim-web-devicons'
+Plug 'vuciv/vim-bujo'
+Plug 'https://github.com/tpope/vim-surround'
 
 Plug 'theprimeagen/vim-be-good'
 
@@ -255,3 +259,13 @@ endif
 
 lua require("carlos")
 
+
+" Bujo
+
+nmap <leader><CR> <Plug>BujoAddnormal
+nmap <leader><BS> <Plug>BujoChecknormal
+
+
+" Prettier
+
+nmap <Leader>pp <Plug>(Prettier)
