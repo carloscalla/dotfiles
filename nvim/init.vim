@@ -1,4 +1,4 @@
-
+" SECTION general sets
 filetype plugin indent on 
 scriptencoding utf-8
 set encoding=utf-8
@@ -40,9 +40,10 @@ set history=50		" keep 50 lines of command line history
 set ruler		" show the cursor position all the time
 set showcmd		" display incomplete commands
 set incsearch		" do incremental searching
-set nohlsearch
+set hlsearch
 set laststatus=2
 set statusline=%f%m%r%h%w%a%=\ [%Y]\ [%{&ff}]\ [%l,%v]\ [%p%%]\ [%L]
+set inccommand=split
 
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
@@ -50,10 +51,14 @@ set backspace=indent,eol,start
 " colorscheme desert
 
 set list
-set listchars=eol:¬,tab:\ \ 
+" set listchars=eol:¬,tab:\ \ 
+" set listchars=eol:↩,tab:>·,trail:~,extends:>,precedes:<,space:·
+set listchars=eol:↩,tab:<·>
+" set listchars=eol:⟲,tab:<·>
 
 let mapleader = " "
 
+" SECTION remaps
 nnoremap <leader>so :source $MYVIMRC<CR>
 nnoremap <leader>cd :cd %:p:h<CR>:pwd<CR>
 nnoremap <leader># :e#<CR>
@@ -69,7 +74,6 @@ nnoremap <leader>wK <C-W>K
 nnoremap <leader>wJ <C-W>J
 nnoremap <leader>wq <C-W>q
 
-tnoremap <Esc> <C-\><C-n>
 
 nnoremap <leader>y "+y
 vnoremap <leader>y "+y
@@ -81,15 +85,39 @@ map ]] j0[[%/{<CR>:noh<CR>
 map [] k$][%?}<CR>:noh<CR>
 
 
+" from TJ
+
+if has('nvim')
+  tnoremap <Esc> <C-\><C-n>
+endif
+
+" Clears hlsearch after doing a search, otherwise just does normal <CR> stuff
+nnoremap <expr> <CR> {-> v:hlsearch ? ":nohl\<CR>" : "\<CR>"}()
+
+nnoremap <Up> <C-y>
+nnoremap <Down> <C-e>
+" Switch between tabs
+nnoremap <Right> gt
+nnoremap <Left>  gT
+
+" inoremap <S-CR> <C-O>o
+" inoremap <C-CR> <C-O>O
+
+
 call plug#begin(stdpath('data') . '/plugged')
 
 Plug 'gruvbox-community/gruvbox'
 Plug 'https://github.com/scrooloose/nerdtree.git'
 Plug 'tpope/vim-fugitive'
 Plug 'https://github.com/jremmen/vim-ripgrep'
+
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
+Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
+Plug 'fannheyward/telescope-coc.nvim'
+
+Plug 'https://github.com/tpope/vim-repeat'
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 Plug 'https://tpope.io/vim/commentary.git'
 Plug 'mbbill/undotree'
@@ -99,9 +127,14 @@ Plug 'https://github.com/MaxMEllon/vim-jsx-pretty'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'vuciv/vim-bujo'
 Plug 'https://github.com/tpope/vim-surround'
+Plug 'justinmk/vim-sneak'
+Plug 'rbgrouleff/bclose.vim'
+Plug 'https://github.com/francoiscabrol/ranger.vim'
 
 Plug 'theprimeagen/vim-be-good'
 
+" Plug 'norcalli/nvim-colorizer.lua'
+" Plug 'hoob3rt/lualine.nvim'
 " Plug 'sbdchd/neoformat'
 
 call plug#end()
@@ -110,12 +143,14 @@ colorscheme gruvbox
 
 " PLUGIN REMAPS
 
+" Telescope
 " Using lua functions
 nnoremap <leader>ff <cmd>lua require('telescope.builtin').find_files()<cr>
 nnoremap <leader>fg <cmd>lua require('telescope.builtin').live_grep()<cr>
 nnoremap <leader>ls <cmd>lua require('telescope.builtin').buffers()<cr>
 nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>
 nnoremap <leader>gs <cmd>lua require('telescope.builtin').git_status()<cr>
+nnoremap <leader>tq <cmd>lua require('telescope.builtin').quickfix()<cr>
 nnoremap <leader>tc :Telescope<SPACE>
 
 
@@ -136,9 +171,7 @@ autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists('s:std_in
 nnoremap <leader>u :UndotreeToggle<CR>
 
 
-
 " Coc - Conquer of Completion
-
 set cmdheight=2
 set updatetime=300
 set shortmess+=c
@@ -247,7 +280,6 @@ set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 
 
 " RipGrep
-
 nnoremap <leader>ps :Rg<SPACE>
 
 if executable('rg')
@@ -256,16 +288,27 @@ endif
 
 
 " Dev Icons
-
 lua require("carlos")
 
 
 " Bujo
-
 nmap <leader><CR> <Plug>BujoAddnormal
+" imap <leader><CR> <Plug>BujoAddinsert
 nmap <leader><BS> <Plug>BujoChecknormal
+" imap <leader><BS> <Plug>BujoCheckinsert
 
 
 " Prettier
-
 nmap <Leader>pp <Plug>(Prettier)
+
+
+" Lualine
+" lua require("lualine").setup()
+
+
+" Ranger
+let g:ranger_map_keys = 0
+
+
+" Colorizer
+" lua require'colorizer'.setup()
