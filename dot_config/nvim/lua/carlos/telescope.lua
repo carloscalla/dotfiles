@@ -12,4 +12,13 @@ require('telescope').setup {
 -- load_extension, somewhere after setup function:
 require('telescope').load_extension('fzf')
 
-require('telescope').load_extension('coc')
+-- require('telescope').load_extension('coc')
+
+require("telescope").load_extension "file_browser"
+
+-- vim.api.nvim_set_keymap(
+--   "n",
+--   "<leader>fb",
+--   ":Telescope file_browser",
+--   { noremap = true }
+-- )
