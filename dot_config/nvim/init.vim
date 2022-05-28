@@ -176,7 +176,6 @@ nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>
 nnoremap <leader>gs <cmd>lua require('telescope.builtin').git_status()<cr>
 nnoremap <leader>tq <cmd>lua require('telescope.builtin').quickfix()<cr>
 nnoremap <leader>tc :Telescope<SPACE>
-
 nnoremap <leader>fb :Telescope file_browser<cr>
 
 
