@@ -34,8 +34,8 @@ local on_attach = function(client, bufnr)
   vim.api.nvim_buf_set_keymap(bufnr, 'n', '[d', '<cmd>Lspsaga diagnostic_jump_prev<cr>', opts)
   vim.api.nvim_buf_set_keymap(bufnr, 'n', ']d', '<cmd>Lspsaga diagnostic_jump_next<cr>', opts)
   vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>pd', '<cmd>Lspsaga preview_definition<cr>', opts)
-  vim.api.nvim_buf_set_keymap(bufrn, 'n', '<C-u>', "<cmd>lua require('lspsaga.action').smart_scroll_with_saga(-1)<cr>", opts)
-  vim.api.nvim_buf_set_keymap(bufrn, 'n', '<C-d>', "<cmd>lua require('lspsaga.action').smart_scroll_with_saga(1)<cr>", opts)
+  vim.api.nvim_buf_set_keymap(bufnr, 'n', '<C-u>', "<cmd>lua require('lspsaga.action').smart_scroll_with_saga(-1)<cr>", opts)
+  vim.api.nvim_buf_set_keymap(bufnr, 'n', '<C-d>', "<cmd>lua require('lspsaga.action').smart_scroll_with_saga(1)<cr>", opts)
 end
 
 -- Use a loop to conveniently call 'setup' on multiple servers and
