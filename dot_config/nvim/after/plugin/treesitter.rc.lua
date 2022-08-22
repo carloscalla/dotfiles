@@ -1,7 +1,6 @@
-
-require'nvim-treesitter.configs'.setup {
--- One of "all", "maintained" (parsers with maintainers), or a list of languages
-  ensure_installed ={
+require 'nvim-treesitter.configs'.setup {
+  -- One of "all", "maintained" (parsers with maintainers), or a list of languages
+  ensure_installed = {
     "bash",
     "c",
     "cpp",
@@ -39,5 +38,15 @@ require'nvim-treesitter.configs'.setup {
     -- Using this option may slow down your editor, and you may see some duplicate highlights.
     -- Instead of true it can also be a list of languages
     additional_vim_regex_highlighting = false,
+
   },
+
+  -- indent = {
+  --   enable = true,
+  --   disable = {},
+  -- },
+
+  autotag = {
+    enable = true,
+  }
 }
