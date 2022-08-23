@@ -12,7 +12,7 @@ augroup numbertoggle
 augroup END
 
 set exrc
-set guicursor=
+" set guicursor=
 set number relativenumber
 set hidden
 set noerrorbells
@@ -107,6 +107,7 @@ nnoremap <Left>  gT
 call plug#begin(stdpath('data') . '/plugged')
 
 Plug 'gruvbox-community/gruvbox'
+" Plug 'morhetz/gruvbox'
 " Plug 'mhartington/oceanic-next'
 " Plug 'overcache/NeoSolarized'
 
@@ -229,7 +230,25 @@ nmap <Leader>pp <Plug>(Prettier)
 set completeopt=menu,menuone,noselect
 
 
+" this doesn't work on the mac default Terminal, use with iTerm2
 if (has("termguicolors"))
  set termguicolors
 endif
 
+" iTerm2
+" let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+" let &t_SR = "\<Esc>]50;CursorShape=2\x7"
+" let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+
+" Terminal
+" let &t_SI.="\e[5 q" "SI = INSERT mode
+" let &t_SR.="\e[4 q" "SR = REPLACE mode
+" let &t_EI.="\e[1 q" "EI = NORMAL mode (ELSE)
+
+
+highlight Cursor guifg=white guibg=black
+highlight iCursor guifg=white guibg=steelblue
+set guicursor=n-v-c:block-Cursor
+set guicursor+=i:ver100-iCursor
+set guicursor+=n-v-c:blinkon0
+set guicursor+=i:blinkwait10

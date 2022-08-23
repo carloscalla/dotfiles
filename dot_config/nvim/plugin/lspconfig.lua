@@ -88,4 +88,12 @@ require('lspconfig')['cssls'].setup {
 }
 
 
+require 'lspconfig'.vimls.setup {
+  on_attach = on_attach,
+  capabilities = capabilities
+}
+
+require 'lspconfig'.eslint.setup {}
+
+
 -- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
