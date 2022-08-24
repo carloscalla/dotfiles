@@ -68,6 +68,7 @@ nnoremap <leader>wj <C-W>j
 nnoremap <leader>wk <C-W>k
 nnoremap <leader>wl <C-W>l
 nnoremap <leader>ww <C-W>w
+nnoremap <leader>wx <C-W>x
 nnoremap <leader>wL <C-W>L
 nnoremap <leader>wH <C-W>H
 nnoremap <leader>wK <C-W>K
@@ -167,6 +168,9 @@ Plug 'folke/trouble.nvim'
 
 " Plug 'neoclide/vim-jsx-improve'
 " Plug 'MaxMEllon/vim-jsx-pretty'
+
+" Plug 'jdhao/better-escape.vim'
+Plug 'folke/which-key.nvim'
 
 call plug#end()
 
