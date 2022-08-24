@@ -5,6 +5,23 @@ set encoding=utf-8
 
 set wildmenu
 
+let undo_dir = expand('~/.config/nvim/.undo')
+" create the directory and any parent directories
+" if the location does not exist.
+if !isdirectory(undo_dir)
+    call mkdir(undo_dir, "p", 0700)
+endif
+
+let backup_dir = expand('~/.config/nvim/.backup')
+if !isdirectory(backup_dir)
+    call mkdir(backup_dir, "p", 0700)
+endif
+
+let swp_dir = expand('~/.config/nvim/.swp')
+if !isdirectory(swp_dir)
+    call mkdir(swp_dir, "p", 0700)
+endif
+
 augroup numbertoggle
   autocmd!
   autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
