@@ -26,8 +26,8 @@ keymap("n", "<leader>e", "<cmd>Lspsaga show_line_diagnostics<CR>", { silent = tr
 -- keymap("n", "<leader>cd", "<cmd>Lspsaga show_cursor_diagnostics<CR>", { silent = true })
 
 -- Diagnsotic jump
-keymap("n", "[e", "<cmd>Lspsaga diagnostic_jump_next<CR>", { silent = true })
-keymap("n", "]e", "<cmd>Lspsaga diagnostic_jump_prev<CR>", { silent = true })
+keymap("n", "[e", "<cmd>Lspsaga diagnostic_jump_prev<CR>", { silent = true })
+keymap("n", "]e", "<cmd>Lspsaga diagnostic_jump_next<CR>", { silent = true })
 
 -- Only jump to error
 keymap("n", "[E", function()
@@ -38,7 +38,7 @@ keymap("n", "]E", function()
 end, { silent = true })
 
 -- Outline
-keymap("n","<leader>o", "<cmd>LSoutlineToggle<CR>",{ silent = true })
+keymap("n", "<leader>o", "<cmd>LSoutlineToggle<CR>", { silent = true })
 
 -- Hover Doc
 keymap("n", "K", "<cmd>Lspsaga hover_doc<CR>", { silent = true })
@@ -49,9 +49,9 @@ keymap("n", "<C-k>", "<Cmd>Lspsaga signature_help<CR>", { silent = true })
 local action = require("lspsaga.action")
 -- scroll in hover doc or  definition preview window
 vim.keymap.set("n", "<C-f>", function()
-    action.smart_scroll_with_saga(1)
+  action.smart_scroll_with_saga(1)
 end, { silent = true })
 -- scroll in hover doc or  definition preview window
 vim.keymap.set("n", "<C-b>", function()
-    action.smart_scroll_with_saga(-1)
+  action.smart_scroll_with_saga(-1)
 end, { silent = true })

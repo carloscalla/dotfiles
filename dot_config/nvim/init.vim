@@ -125,12 +125,14 @@ nnoremap <Left>  gT
 call plug#begin(stdpath('data') . '/plugged')
 
 Plug 'gruvbox-community/gruvbox'
-" Plug 'morhetz/gruvbox'
-" Plug 'mhartington/oceanic-next'
 " Plug 'overcache/NeoSolarized'
 
+Plug 'tpope/vim-fugitive' " tpope baby
+Plug 'tpope/vim-repeat'
+Plug 'https://tpope.io/vim/commentary.git'
+Plug 'tpope/vim-surround'
+
 Plug 'scrooloose/nerdtree'
-Plug 'tpope/vim-fugitive'
 Plug 'jremmen/vim-ripgrep'
 
 Plug 'nvim-lua/popup.nvim'
@@ -139,55 +141,53 @@ Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 Plug 'nvim-telescope/telescope-file-browser.nvim'
 
-Plug 'neovim/nvim-lspconfig'
+Plug 'neovim/nvim-lspconfig' " LSP configuration
+Plug 'williamboman/mason.nvim' " LSP manager
+Plug 'williamboman/mason-lspconfig.nvim'
+
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
-Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'hrsh7th/cmp-nvim-lsp' " Autocomplete
 Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/cmp-path'
 Plug 'hrsh7th/cmp-cmdline'
 Plug 'hrsh7th/nvim-cmp'
 
 " For vsnip users.
-Plug 'hrsh7th/cmp-vsnip'
+Plug 'hrsh7th/cmp-vsnip' " Snippets for cmp
 Plug 'hrsh7th/vim-vsnip'
 
 Plug 'windwp/nvim-autopairs'
 Plug 'windwp/nvim-ts-autotag'
 
-Plug 'tpope/vim-repeat'
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
-Plug 'https://tpope.io/vim/commentary.git'
 Plug 'mbbill/undotree'
 Plug 'kyazdani42/nvim-web-devicons'
-Plug 'vuciv/vim-bujo'
-Plug 'tpope/vim-surround'
-Plug 'justinmk/vim-sneak'
+Plug 'vuciv/vim-bujo' " TODOs
+Plug 'justinmk/vim-sneak' " Better f
 Plug 'rbgrouleff/bclose.vim'
 Plug 'mattn/emmet-vim'
 
-Plug 'theprimeagen/vim-be-good'
+" Plug 'theprimeagen/vim-be-good'
 
-Plug 'norcalli/nvim-colorizer.lua'
+Plug 'norcalli/nvim-colorizer.lua' " showing colors preview for color codes
 Plug 'nvim-lualine/lualine.nvim'
 " Plug 'sbdchd/neoformat'
 
 Plug 'akinsho/toggleterm.nvim'
-Plug 'glepnir/lspsaga.nvim'
-Plug 'onsails/lspkind-nvim'
+Plug 'glepnir/lspsaga.nvim' " LSP UI
+Plug 'onsails/lspkind-nvim' " vscode-like pictograms
 
 Plug 'lewis6991/gitsigns.nvim'
-Plug 'williamboman/mason.nvim'
-Plug 'williamboman/mason-lspconfig.nvim'
 
-Plug 'jose-elias-alvarez/null-ls.nvim'
+Plug 'jose-elias-alvarez/null-ls.nvim' " Neovim and LSP bridge
 Plug 'folke/trouble.nvim'
 
 " Plug 'neoclide/vim-jsx-improve'
 " Plug 'MaxMEllon/vim-jsx-pretty'
 
 " Plug 'jdhao/better-escape.vim'
-Plug 'folke/which-key.nvim'
+Plug 'folke/which-key.nvim' " Key mappings UI
 
 call plug#end()
 
@@ -232,10 +232,6 @@ if executable('rg')
 endif
 
 
-" Dev Icons
-lua require("carlos")
-
-
 " Bujo
 nmap <leader><CR> <Plug>BujoAddnormal
 " imap <leader><CR> <Plug>BujoAddinsert
@@ -273,3 +269,6 @@ set guicursor=n-v-c:block-Cursor
 set guicursor+=i:ver100-iCursor
 set guicursor+=n-v-c:blinkon0
 set guicursor+=i:blinkwait10
+
+
+" lua require("carlos")
