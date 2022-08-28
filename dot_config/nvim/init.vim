@@ -132,7 +132,11 @@ Plug 'tpope/vim-repeat'
 Plug 'https://tpope.io/vim/commentary.git'
 Plug 'tpope/vim-surround'
 
-Plug 'scrooloose/nerdtree'
+" Plug 'scrooloose/nerdtree'
+Plug 'preservim/nerdtree'
+Plug 'ryanoasis/vim-devicons' " devicons for nerdtree and others
+Plug 'Xuyuanp/nerdtree-git-plugin' " git file signs for nerdtree
+
 Plug 'jremmen/vim-ripgrep'
 
 Plug 'nvim-lua/popup.nvim'
@@ -162,7 +166,7 @@ Plug 'windwp/nvim-ts-autotag'
 
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 Plug 'mbbill/undotree'
-Plug 'kyazdani42/nvim-web-devicons'
+Plug 'kyazdani42/nvim-web-devicons' " lua fork of vim-devicons
 Plug 'vuciv/vim-bujo' " TODOs
 Plug 'justinmk/vim-sneak' " Better f
 Plug 'rbgrouleff/bclose.vim'
@@ -218,6 +222,9 @@ autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists('s:std_in
     \ execute 'NERDTree' argv()[0] | wincmd p | enew | execute 'cd '.argv()[0] | endif
 
 " let g:NERDTreeIgnore = ['^node_modules$']
+
+" nerdtree-git-plugin
+let g:NERDTreeGitStatusUseNerdFonts = 1 " you should install nerdfonts by yourself. default: 0
 
 
 " Undotree
