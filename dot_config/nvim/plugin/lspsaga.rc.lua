@@ -43,15 +43,27 @@ keymap("n", "<leader>o", "<cmd>LSoutlineToggle<CR>", { silent = true })
 -- Hover Doc
 keymap("n", "K", "<cmd>Lspsaga hover_doc<CR>", { silent = true })
 
--- Signature help
-keymap("n", "<C-k>", "<Cmd>Lspsaga signature_help<CR>", { silent = true })
 
-local action = require("lspsaga.action")
--- scroll in hover doc or  definition preview window
-vim.keymap.set("n", "<C-f>", function()
-  action.smart_scroll_with_saga(1)
-end, { silent = true })
--- scroll in hover doc or  definition preview window
-vim.keymap.set("n", "<C-b>", function()
-  action.smart_scroll_with_saga(-1)
-end, { silent = true })
+-- ToggleTerm already does this
+-- -- Float terminal
+-- keymap("n", "<A-d>", "<cmd>Lspsaga open_floaterm<CR>", { silent = true })
+-- -- if you want pass somc cli command into terminal you can do like this
+-- -- open lazygit in lspsaga float terminal
+-- keymap("n", "<A-d>", "<cmd>Lspsaga open_floaterm lazygit<CR>", { silent = true })
+-- -- close floaterm
+-- keymap("t", "<A-d>", [[<C-\><C-n><cmd>Lspsaga close_floaterm<CR>]], { silent = true })
+
+
+-- Deprecated
+-- -- Signature help
+-- keymap("n", "<C-k>", "<Cmd>Lspsaga signature_help<CR>", { silent = true })
+
+-- local action = require("lspsaga.action")
+-- -- scroll in hover doc or  definition preview window
+-- vim.keymap.set("n", "<C-f>", function()
+--   action.smart_scroll_with_saga(1)
+-- end, { silent = true })
+-- -- scroll in hover doc or  definition preview window
+-- vim.keymap.set("n", "<C-b>", function()
+--   action.smart_scroll_with_saga(-1)
+-- end, { silent = true })
