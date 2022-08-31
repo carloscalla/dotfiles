@@ -193,6 +193,8 @@ Plug 'folke/trouble.nvim'
 " Plug 'jdhao/better-escape.vim'
 Plug 'folke/which-key.nvim' " Key mappings UI
 
+Plug 'ThePrimeagen/harpoon'
+
 call plug#end()
 
 colorscheme gruvbox
