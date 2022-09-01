@@ -280,4 +280,16 @@ set guicursor+=n-v-c:blinkon0
 set guicursor+=i:blinkwait10
 
 
+" Moving lines up and down
+" Change these mappings accordingly
+" <A-j> = ∆
+" <A-k> = ˚
+" nnoremap ∆ :m .+1<CR>==
+" nnoremap ˚ :m .-2<CR>==
+" inoremap ∆ <Esc>:m .+1<CR>==gi
+" inoremap ˚ <Esc>:m .-2<CR>==gi
+" vnoremap ∆ :m '>+1<CR>gv=gv
+" vnoremap ˚ :m '<-2<CR>gv=gv
+
+
 " lua require("carlos")
