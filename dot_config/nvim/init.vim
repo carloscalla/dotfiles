@@ -150,6 +150,7 @@ Plug 'williamboman/mason.nvim' " LSP manager
 Plug 'williamboman/mason-lspconfig.nvim'
 
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'nvim-treesitter/nvim-treesitter-context'
 
 Plug 'hrsh7th/cmp-nvim-lsp' " Autocomplete
 Plug 'hrsh7th/cmp-buffer'
