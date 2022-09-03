@@ -141,7 +141,7 @@ Plug 'jremmen/vim-ripgrep'
 
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
-Plug 'nvim-telescope/telescope.nvim'
+Plug 'nvim-telescope/telescope.nvim', { 'branch': '0.1.x' }
 Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 Plug 'nvim-telescope/telescope-file-browser.nvim'
 
@@ -180,7 +180,7 @@ Plug 'nvim-lualine/lualine.nvim'
 " Plug 'sbdchd/neoformat'
 
 Plug 'akinsho/toggleterm.nvim'
-Plug 'glepnir/lspsaga.nvim' " LSP UI
+Plug 'glepnir/lspsaga.nvim', { 'branch': 'main' } " LSP UI
 Plug 'onsails/lspkind-nvim' " vscode-like pictograms
 
 Plug 'lewis6991/gitsigns.nvim'
