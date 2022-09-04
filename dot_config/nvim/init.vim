@@ -234,6 +234,13 @@ let g:NERDTreeGitStatusUseNerdFonts = 1 " you should install nerdfonts by yourse
 
 " Undotree
 nnoremap <leader>u :UndotreeToggle<CR>
+if !exists('g:undotree_WindowLayout')
+    let g:undotree_WindowLayout = 2
+endif
+if !exists('g:undotree_DiffpanelHeight')
+    let g:undotree_DiffpanelHeight = 25
+endif
+
 
 
 " RipGrep
