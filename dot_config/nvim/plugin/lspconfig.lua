@@ -33,6 +33,7 @@ local on_attach = function(client, bufnr)
   -- vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, bufopts)
   -- vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
 
+  require("aerial").on_attach(client, bufnr)
 end
 
 local lsp_flags = {

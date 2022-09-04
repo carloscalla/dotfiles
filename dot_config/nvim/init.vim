@@ -97,10 +97,10 @@ nnoremap <leader>y "+y
 vnoremap <leader>y "+y
 nnoremap <leader>Y gg"+yG
 
-map [[ ?{<CR>w99[{:noh<CR>
-map ][ /}<CR>b99]}:noh<CR>
-map ]] j0[[%/{<CR>:noh<CR>
-map [] k$][%?}<CR>:noh<CR>
+" map [[ ?{<CR>w99[{:noh<CR>
+" map ][ /}<CR>b99]}:noh<CR>
+" map ]] j0[[%/{<CR>:noh<CR>
+" map [] k$][%?}<CR>:noh<CR>
 
 
 " from TJ
@@ -197,6 +197,7 @@ Plug 'folke/trouble.nvim'
 Plug 'folke/which-key.nvim' " Key mappings UI
 
 Plug 'ThePrimeagen/harpoon'
+Plug 'stevearc/aerial.nvim'
 
 call plug#end()
 
