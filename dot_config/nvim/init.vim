@@ -129,8 +129,10 @@ Plug 'gruvbox-community/gruvbox'
 
 Plug 'tpope/vim-fugitive' " tpope baby
 Plug 'tpope/vim-repeat'
-Plug 'https://tpope.io/vim/commentary.git'
+" Plug 'https://tpope.io/vim/commentary.git'
+Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
+Plug 'JoosepAlviste/nvim-ts-context-commentstring'
 
 " Plug 'scrooloose/nerdtree'
 Plug 'preservim/nerdtree'
