@@ -4,20 +4,23 @@
 local keymap = vim.keymap.set
 local saga = require('lspsaga')
 
-saga.init_lsp_saga()
+saga.init_lsp_saga({
+  -- Error, Warn, Info, Hint
+  diagnostic_header = { "🚨 ", "⚠️  ", "ℹ️  ", "😉 " }
+})
 
 -- Lsp finder find the symbol definition implmement reference
 keymap("n", "gr", "<cmd>Lspsaga lsp_finder<CR>", { silent = true })
 
 -- Code action
-keymap("n", "<leader>ca", "<cmd>Lspsaga code_action<CR>", { silent = true })
-keymap("v", "<leader>ca", "<cmd><C-U>Lspsaga range_code_action<CR>", { silent = true })
+keymap({"n","v"}, "<leader>ca", "<cmd>Lspsaga code_action<CR>", { silent = true })
+-- keymap("v", "<leader>ca", "<cmd><C-U>Lspsaga range_code_action<CR>", { silent = true })
 
 -- Rename
 keymap("n", "<leader>rn", "<cmd>Lspsaga rename<CR>", { silent = true })
 
 -- Definition preview
-keymap("n", "<leader>pd", "<cmd>Lspsaga preview_definition<CR>", { silent = true })
+keymap("n", "<leader>pd", "<cmd>Lspsaga peek_definition<CR>", { silent = true })
 
 -- Show line diagnostics
 keymap("n", "<leader>e", "<cmd>Lspsaga show_line_diagnostics<CR>", { silent = true })

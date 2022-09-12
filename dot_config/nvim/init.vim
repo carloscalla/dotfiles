@@ -29,7 +29,7 @@ augroup numbertoggle
 augroup END
 
 set exrc
-" set guicursor=
+
 set number relativenumber
 set hidden
 set noerrorbells
@@ -65,13 +65,10 @@ set inccommand=split
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
 
-" colorscheme desert
-
 set list
 " set listchars=eol:¬,tab:\ \ 
 " set listchars=eol:↩,tab:>·,trail:~,extends:>,precedes:<,space:·
 set listchars=eol:↩,tab:<·>
-" set listchars=eol:⟲,tab:<·>
 
 let mapleader = " "
 
@@ -92,7 +89,6 @@ nnoremap <leader>wK <C-W>K
 nnoremap <leader>wJ <C-W>J
 nnoremap <leader>wq <C-W>q
 
-
 nnoremap <leader>y "+y
 vnoremap <leader>y "+y
 nnoremap <leader>Y gg"+yG
@@ -112,8 +108,8 @@ endif
 " Clears hlsearch after doing a search, otherwise just does normal <CR> stuff
 nnoremap <expr> <CR> {-> v:hlsearch ? ":nohl\<CR>" : "\<CR>"}()
 
-nnoremap <Up> <C-y>
-nnoremap <Down> <C-e>
+nnoremap <Up> 3<C-y>
+nnoremap <Down> 3<C-e>
 " Switch between tabs
 nnoremap <Right> gt
 nnoremap <Left>  gT
@@ -125,7 +121,14 @@ nnoremap <Left>  gT
 call plug#begin(stdpath('data') . '/plugged')
 
 Plug 'gruvbox-community/gruvbox'
-" Plug 'overcache/NeoSolarized'
+Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
+" Plug 'mhartington/oceanic-next'
+" Plug 'catppuccin/nvim', {'as': 'catppuccin'}
+" Plug 'EdenEast/nightfox.nvim'
+" Plug 'ayu-theme/ayu-vim'
+" Plug 'embark-theme/vim', { 'as': 'embark', 'branch': 'main' }
+" Plug 'rose-pine/neovim'
+" Plug 'marko-cerovac/material.nvim'
 
 Plug 'tpope/vim-fugitive' " tpope baby
 Plug 'tpope/vim-repeat'
@@ -161,8 +164,14 @@ Plug 'hrsh7th/cmp-cmdline'
 Plug 'hrsh7th/nvim-cmp'
 
 " For vsnip users.
-Plug 'hrsh7th/cmp-vsnip' " Snippets for cmp
-Plug 'hrsh7th/vim-vsnip'
+" Plug 'hrsh7th/cmp-vsnip' " Snippets for cmp
+" Plug 'hrsh7th/vim-vsnip'
+
+" For luasnip users.
+Plug 'L3MON4D3/LuaSnip'
+Plug 'saadparwaiz1/cmp_luasnip'
+
+Plug 'rafamadriz/friendly-snippets'
 
 Plug 'windwp/nvim-autopairs'
 Plug 'windwp/nvim-ts-autotag'
@@ -173,7 +182,7 @@ Plug 'kyazdani42/nvim-web-devicons' " lua fork of vim-devicons
 Plug 'vuciv/vim-bujo' " TODOs
 Plug 'justinmk/vim-sneak' " Better f
 Plug 'rbgrouleff/bclose.vim'
-Plug 'mattn/emmet-vim'
+" Plug 'mattn/emmet-vim'
 
 " Plug 'theprimeagen/vim-be-good'
 
@@ -198,24 +207,48 @@ Plug 'folke/which-key.nvim' " Key mappings UI
 
 Plug 'ThePrimeagen/harpoon'
 Plug 'stevearc/aerial.nvim'
+Plug 'yamatsum/nvim-cursorline'
 
 call plug#end()
 
-colorscheme gruvbox
+
+" let g:gruvbox_contrast_dark = "hard"
+" let g:gruvbox_italic = 1
+" let g:gruvbox_bold = 1
+" " let g:gruvbox_italicize_comments = 1
+" " let g:gruvbox_italicize_strings = 0
+" colorscheme gruvbox
+" highlight Normal guibg=NONE ctermbg=NONE
+
+
+" colorscheme tokyonight-night
+
+
+" syntax on
+" let g:oceanic_next_terminal_bold = 1
+" let g:oceanic_next_terminal_italic = 1
+" colorscheme OceanicNext
+
+
+" let g:catppuccin_flavour = "mocha" " latte, frappe, macchiato, mocha
+" lua << EOF
+" require("catppuccin").setup()
+" EOF
+" colorscheme catppuccin
+
+
+" colorscheme terafox
+
+
+" let ayucolor="dark"   " for dark version of theme
+" colorscheme ayu
+
+
+" let g:embark_terminal_italics = 1
+" colorscheme embark
+
 
 " PLUGIN REMAPS
-
-" Telescope
-" Using lua functions
-nnoremap <leader>ff <cmd>lua require('telescope.builtin').find_files()<cr>
-nnoremap <leader>pf <cmd>lua require('telescope.builtin').live_grep()<cr>
-nnoremap <leader>ls <cmd>lua require('telescope.builtin').buffers()<cr>
-nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>
-nnoremap <leader>gs <cmd>lua require('telescope.builtin').git_status()<cr>
-nnoremap <leader>tq <cmd>lua require('telescope.builtin').quickfix()<cr>
-nnoremap <leader>tc :Telescope<SPACE>
-nnoremap <leader>fb :Telescope file_browser<cr>
-
 
 " NERDTree
 nnoremap <leader>nt :NERDTreeToggle<CR>
@@ -283,24 +316,26 @@ endif
 " let &t_EI.="\e[1 q" "EI = NORMAL mode (ELSE)
 
 
-highlight Cursor guifg=white guibg=black
-highlight iCursor guifg=white guibg=steelblue
+" highlight Cursor guifg=white guibg=black
+" highlight Cursor guifg=white guibg=steelblue
+" highlight iCursor guifg=white guibg=steelblue
 set guicursor=n-v-c:block-Cursor
 set guicursor+=i:ver100-iCursor
 set guicursor+=n-v-c:blinkon0
 set guicursor+=i:blinkwait10
 
+" highlight Normal guibg=NONE ctermbg=NONE " sets background to NONE
 
 " Moving lines up and down
 " Change these mappings accordingly
 " <A-j> = ∆
 " <A-k> = ˚
-" nnoremap ∆ :m .+1<CR>==
-" nnoremap ˚ :m .-2<CR>==
-" inoremap ∆ <Esc>:m .+1<CR>==gi
-" inoremap ˚ <Esc>:m .-2<CR>==gi
-" vnoremap ∆ :m '>+1<CR>gv=gv
-" vnoremap ˚ :m '<-2<CR>gv=gv
+nnoremap ∆ :m .+1<CR>==
+nnoremap ˚ :m .-2<CR>==
+inoremap ∆ <Esc>:m .+1<CR>==gi
+inoremap ˚ <Esc>:m .-2<CR>==gi
+vnoremap ∆ :m '>+1<CR>gv=gv
+vnoremap ˚ :m '<-2<CR>gv=gv
 
 
-" lua require("carlos")
+lua require("carlos")
