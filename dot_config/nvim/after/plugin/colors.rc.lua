@@ -16,9 +16,9 @@ function ColorMyPencils()
     vim.api.nvim_set_hl(0, thing, opts)
   end
 
-  -- hl("SignColumn", {
-  --     bg = "none",
-  -- })
+  hl("SignColumn", {
+    bg = "none",
+  })
 
   -- hl("ColorColumn", {
   --     ctermbg = 0,
@@ -29,8 +29,13 @@ function ColorMyPencils()
   --   bg = "None"
   -- })
 
+  hl('WinSeparator', {
+    fg = 'Gray'
+  })
+
   hl('Cursor', {
-    bg = 'SeaGreen',
+    bg = 'DarkCyan',
+    fg = 'White'
   })
 
   hl("Normal", {
@@ -47,13 +52,13 @@ function ColorMyPencils()
 
 end
 
--- ColorMyPencils()
+ColorMyPencils()
 
 
 require("tokyonight").setup({
   -- your configuration comes here
   -- or leave it empty to use the default settings
-  style = "night", -- The theme comes in three styles, `storm`, a darker variant `night` and `day`
+  style = "storm", -- The theme comes in three styles, `storm`, a darker variant `night` and `day`
   transparent = true, -- Enable this to disable setting the background color
   terminal_colors = true, -- Configure the colors used when opening a `:terminal` in Neovim
   styles = {
@@ -91,10 +96,10 @@ require("tokyonight").setup({
     --   bg= 'Gray'
     -- }
     hl.WinSeparator = {
-      fg="Gray",
+      fg = "Gray",
     }
   end,
 })
 
 -- Lua
-vim.cmd [[colorscheme tokyonight]]
+-- vim.cmd [[colorscheme tokyonight]]
