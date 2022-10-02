@@ -1,0 +1,22 @@
+# Cmd shortcuts
+alias ll="ls -l"
+alias lla="ls -la"
+alias tr="tree -L"
+
+
+# Git shortcuts
+alias gs="git status "
+alias tgs="time git status "
+alias gf="git fetch "
+alias gpll="git pull "
+alias gpsh="git push "
+alias gd="git diff "
+alias go="git checkout "
+alias gb="git branch "
+alias gba="git branch --all"
+alias gbl="git branch --list"
+alias ga="git add "
+alias gc="git commit "
+alias gcm="git commit -m "
+alias gac="git add . && git commit "
+alias gacm="git add . && git commit -m "
