@@ -122,6 +122,7 @@ call plug#begin(stdpath('data') . '/plugged')
 
 Plug 'gruvbox-community/gruvbox'
 Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
+Plug 'bluz71/vim-nightfly-guicolors'
 " Plug 'mhartington/oceanic-next'
 " Plug 'catppuccin/nvim', {'as': 'catppuccin'}
 " Plug 'EdenEast/nightfox.nvim'

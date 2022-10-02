@@ -13,7 +13,7 @@ saga.init_lsp_saga({
 keymap("n", "gr", "<cmd>Lspsaga lsp_finder<CR>", { silent = true })
 
 -- Code action
-keymap({"n","v"}, "<leader>ca", "<cmd>Lspsaga code_action<CR>", { silent = true })
+-- keymap({"n","v"}, "<leader>ca", "<cmd>Lspsaga code_action<CR>", { silent = true })
 -- keymap("v", "<leader>ca", "<cmd><C-U>Lspsaga range_code_action<CR>", { silent = true })
 
 -- Rename

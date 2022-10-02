@@ -1,14 +1,11 @@
 vim.g.carlos_colorscheme = "gruvbox"
 
-function ColorMyPencils()
+function ColorGruvBox()
   vim.g.gruvbox_contrast_dark = 'hard'
   vim.g.gruvbox_italic = '1'
   vim.g.gruvbox_bold = '1'
   vim.g.gruvbox_invert_selection = '0'
   vim.opt.background = "dark"
-
-  -- vim.g.tokyonight_transparent_sidebar = true
-  -- vim.g.tokyonight_transparent = true
 
   vim.cmd("colorscheme " .. vim.g.carlos_colorscheme)
 
@@ -49,16 +46,14 @@ function ColorMyPencils()
   -- hl("netrwDir", {
   --     fg = "#5eacd3"
   -- })
-
 end
 
-ColorMyPencils()
-
+-- ColorGruvBox()
 
 require("tokyonight").setup({
   -- your configuration comes here
   -- or leave it empty to use the default settings
-  style = "storm", -- The theme comes in three styles, `storm`, a darker variant `night` and `day`
+  style = "moon", -- The theme comes in three styles, `storm`, a darker variant `night` and `day`
   transparent = true, -- Enable this to disable setting the background color
   terminal_colors = true, -- Configure the colors used when opening a `:terminal` in Neovim
   styles = {
@@ -103,3 +98,19 @@ require("tokyonight").setup({
 
 -- Lua
 -- vim.cmd [[colorscheme tokyonight]]
+
+
+vim.cmd [[colorscheme nightfly]]
+
+function ColorMyPencils()
+  local hl = function(thing, opts)
+    vim.api.nvim_set_hl(0, thing, opts)
+  end
+
+  hl('Cursor', {
+    bg = 'DarkCyan',
+    fg = 'White'
+  })
+end
+
+ColorMyPencils()
