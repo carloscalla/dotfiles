@@ -96,5 +96,10 @@ require 'lspconfig'.vimls.setup {
 
 require 'lspconfig'.eslint.setup {}
 
+require('lspconfig').clangd.setup {
+  on_attach = on_attach,
+  flags = lsp_flags,
+  capabilities = capabilities
+}
 
 -- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
