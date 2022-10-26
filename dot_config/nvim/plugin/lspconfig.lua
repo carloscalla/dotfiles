@@ -42,8 +42,11 @@ local lsp_flags = {
 }
 
 -- The nvim-cmp almost supports LSP's capabilities so You should advertise it to LSP servers..
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
+-- local capabilities = vim.lsp.protocol.make_client_capabilities()
+-- capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
+
+-- Set up lspconfig.
+local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
 
 require('lspconfig')['tsserver'].setup {
@@ -61,11 +64,13 @@ require('lspconfig')['tsserver'].setup {
 -- }
 
 require 'lspconfig'.jsonls.setup {
+  flags = lsp_flags,
   capabilities = capabilities,
 }
 
 
 require 'lspconfig'.sumneko_lua.setup {
+  flags = lsp_flags,
   on_attach = on_attach,
   settings = {
     Lua = {
@@ -85,11 +90,13 @@ require 'lspconfig'.sumneko_lua.setup {
 
 
 require('lspconfig')['cssls'].setup {
+  flags = lsp_flags,
   capabilities = capabilities
 }
 
 
 require 'lspconfig'.vimls.setup {
+  flags = lsp_flags,
   on_attach = on_attach,
   capabilities = capabilities
 }
