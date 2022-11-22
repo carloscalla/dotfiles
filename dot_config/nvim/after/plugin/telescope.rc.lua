@@ -48,7 +48,7 @@ vim.api.nvim_set_keymap("n", "<leader>ls", "<cmd>Telescope buffers<CR>", { norem
 vim.api.nvim_set_keymap("n", "<leader>fh", "<cmd>Telescope help_tags<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<leader>gs", "<cmd>Telescope git_status<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<leader>tq", "<cmd>Telescope quickfix<CR>", { noremap = true })
-vim.api.nvim_set_keymap("n", "<leader>tc", "<cmd>Telescope<SPACE>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<leader>tc", ":Telescope<SPACE>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<leader>fb", "<cmd>Telescope file_browser<CR>", { noremap = true })
 
 
