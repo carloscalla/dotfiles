@@ -192,7 +192,6 @@ Plug 'nvim-lualine/lualine.nvim'
 " Plug 'sbdchd/neoformat'
 
 Plug 'akinsho/toggleterm.nvim'
-Plug 'glepnir/lspsaga.nvim', { 'branch': 'main' } " LSP UI
 Plug 'onsails/lspkind-nvim' " vscode-like pictograms
 
 Plug 'lewis6991/gitsigns.nvim'
@@ -207,8 +206,12 @@ Plug 'folke/trouble.nvim'
 Plug 'folke/which-key.nvim' " Key mappings UI
 
 Plug 'ThePrimeagen/harpoon'
-Plug 'stevearc/aerial.nvim'
 Plug 'yamatsum/nvim-cursorline'
+
+
+" Deprecated/Updated
+" Plug 'glepnir/lspsaga.nvim', { 'branch': 'main' } " LSP UI
+" Plug 'stevearc/aerial.nvim'
 
 call plug#end()
 

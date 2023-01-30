@@ -48,7 +48,7 @@ function ColorGruvBox()
   -- })
 end
 
--- ColorGruvBox()
+ColorGruvBox()
 
 require("tokyonight").setup({
   -- your configuration comes here
@@ -100,7 +100,7 @@ require("tokyonight").setup({
 -- vim.cmd [[colorscheme tokyonight]]
 
 
-vim.cmd [[colorscheme nightfly]]
+-- vim.cmd [[colorscheme nightfly]]
 
 function ColorMyPencils()
   local hl = function(thing, opts)
@@ -113,4 +113,4 @@ function ColorMyPencils()
   })
 end
 
-ColorMyPencils()
+-- ColorMyPencils()
