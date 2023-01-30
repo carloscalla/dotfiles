@@ -50,6 +50,7 @@ vim.api.nvim_set_keymap("n", "<leader>gs", "<cmd>Telescope git_status<CR>", { no
 vim.api.nvim_set_keymap("n", "<leader>tq", "<cmd>Telescope quickfix<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<leader>tc", ":Telescope<SPACE>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<leader>fb", "<cmd>Telescope file_browser<CR>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<leader>tr", "<cmd>Telescope lsp_references<CR>", { noremap = true })
 
 
 

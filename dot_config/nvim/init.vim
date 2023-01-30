@@ -208,9 +208,9 @@ Plug 'folke/which-key.nvim' " Key mappings UI
 Plug 'ThePrimeagen/harpoon'
 Plug 'yamatsum/nvim-cursorline'
 
+Plug 'glepnir/lspsaga.nvim', { 'branch': 'main' } " LSP UI
 
 " Deprecated/Updated
-" Plug 'glepnir/lspsaga.nvim', { 'branch': 'main' } " LSP UI
 " Plug 'stevearc/aerial.nvim'
 
 call plug#end()
