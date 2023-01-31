@@ -140,7 +140,6 @@ Plug 'JoosepAlviste/nvim-ts-context-commentstring'
 
 " Plug 'scrooloose/nerdtree'
 Plug 'preservim/nerdtree'
-Plug 'ryanoasis/vim-devicons' " devicons for nerdtree and others
 Plug 'Xuyuanp/nerdtree-git-plugin' " git file signs for nerdtree
 
 Plug 'jremmen/vim-ripgrep'
@@ -209,6 +208,9 @@ Plug 'ThePrimeagen/harpoon'
 Plug 'yamatsum/nvim-cursorline'
 
 Plug 'glepnir/lspsaga.nvim', { 'branch': 'main' } " LSP UI
+
+Plug 'her/synicons.vim'
+Plug 'ryanoasis/vim-devicons' " devicons for nerdtree and others
 
 " Deprecated/Updated
 " Plug 'stevearc/aerial.nvim'
