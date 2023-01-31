@@ -1,4 +1,9 @@
-require('lspsaga').setup{}
+require('lspsaga').setup {
+  preview = {
+    lines_above = 1,
+    lines_below = 20,
+  }
+}
 
 
 local keymap = vim.keymap.set
