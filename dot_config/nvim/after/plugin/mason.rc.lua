@@ -9,7 +9,7 @@ require("mason-lspconfig").setup({
     "eslint",
     "html",
     "jsonls",
-    "sumneko_lua",
+    "lua_ls",
     "tailwindcss",
     "tsserver",
     "vimls",
