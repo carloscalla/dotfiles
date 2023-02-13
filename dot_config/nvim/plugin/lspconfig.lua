@@ -32,8 +32,6 @@ local on_attach = function(client, bufnr)
   vim.keymap.set('n', '<space>ca', vim.lsp.buf.code_action, bufopts)
   vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, bufopts)
   vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
-
-  -- require("aerial").on_attach(client, bufnr)
 end
 
 local lsp_flags = {
@@ -41,13 +39,9 @@ local lsp_flags = {
   debounce_text_changes = 150,
 }
 
--- The nvim-cmp almost supports LSP's capabilities so You should advertise it to LSP servers..
--- local capabilities = vim.lsp.protocol.make_client_capabilities()
--- capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
 
 -- Set up lspconfig.
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
-
 
 require('lspconfig')['tsserver'].setup {
   on_attach = on_attach,
@@ -55,19 +49,10 @@ require('lspconfig')['tsserver'].setup {
   capabilities = capabilities
 }
 
---Enable (broadcasting) snippet capability for completion
--- local capabilitiesCompletion = vim.lsp.protocol.make_client_capabilities()
--- capabilitiesCompletion.textDocument.completion.completionItem.snippetSupport = true
-
--- require 'lspconfig'.jsonls.setup {
---   capabilities = capabilitiesCompletion,
--- }
-
 require 'lspconfig'.jsonls.setup {
   flags = lsp_flags,
   capabilities = capabilities,
 }
-
 
 require 'lspconfig'.lua_ls.setup {
   flags = lsp_flags,
@@ -80,7 +65,7 @@ require 'lspconfig'.lua_ls.setup {
       },
       diagnostics = {
         -- Get the language server to recognize the `vim` global
-        globals = {'vim'},
+        globals = { 'vim' },
       },
       workspace = {
         -- Make the server aware of Neovim runtime files
@@ -93,28 +78,12 @@ require 'lspconfig'.lua_ls.setup {
       },
     },
   },
-  -- settings = {
-  --   Lua = {
-  --     diagnostics = {
-  --       -- Get the language server to recognize the `vim` global
-  --       globals = { 'vim' },
-  --     },
-
-  --     workspace = {
-  --       -- Make the server aware of Neovim runtime files
-  --       library = vim.api.nvim_get_runtime_file("", true),
-  --       checkThirdParty = false
-  --     },
-  --   },
-  -- },
 }
-
 
 require('lspconfig')['cssls'].setup {
   flags = lsp_flags,
   capabilities = capabilities
 }
-
 
 require 'lspconfig'.vimls.setup {
   flags = lsp_flags,
