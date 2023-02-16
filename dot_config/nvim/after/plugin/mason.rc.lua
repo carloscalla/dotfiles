@@ -10,6 +10,7 @@ require("mason-lspconfig").setup({
     "html",
     "jsonls",
     "lua_ls",
+    "rust_analyzer",
     "tailwindcss",
     "tsserver",
     "vimls",

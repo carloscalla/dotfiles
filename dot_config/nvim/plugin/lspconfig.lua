@@ -99,4 +99,11 @@ require('lspconfig').clangd.setup {
   capabilities = capabilities
 }
 
+require 'lspconfig'.rust_analyzer.setup {
+  on_attach = on_attach,
+  flags = lsp_flags,
+  capabilities = capabilities
+}
+
+
 -- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
