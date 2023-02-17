@@ -91,7 +91,11 @@ nnoremap <leader>wq <C-W>q
 
 nnoremap <leader>y "+y
 vnoremap <leader>y "+y
-nnoremap <leader>Y gg"+yG
+nnoremap <leader>Y gg0"+yG
+
+xnoremap <leader>pt "_dp
+nnoremap <leader>d "_d
+vnoremap <leader>d "_d
 
 " map [[ ?{<CR>w99[{:noh<CR>
 " map ][ /}<CR>b99]}:noh<CR>
