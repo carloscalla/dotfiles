@@ -15,7 +15,7 @@ local keymap = vim.keymap.set
 -- })
 
 -- Lsp finder find the symbol definition implmement reference
-keymap("n", "<leader>gr", "<cmd>Lspsaga lsp_finder<CR>", { silent = true })
+keymap("n", "<leader>gr", "<cmd>Lspsaga finder<CR>", { silent = true })
 
 -- Code action
 -- keymap({"n","v"}, "<leader>ca", "<cmd>Lspsaga code_action<CR>", { silent = true })
