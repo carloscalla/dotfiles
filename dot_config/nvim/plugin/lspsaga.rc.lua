@@ -1,8 +1,9 @@
 require('lspsaga').setup {
-  preview = {
-    lines_above = 1,
-    lines_below = 20,
-  }
+  -- I think this became deprecated in the latest update, I don't see them in the docs options anymore
+  -- preview = {
+  --   lines_above = 1,
+  --   lines_below = 20,
+  -- }
 }
 
 
