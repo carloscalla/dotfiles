@@ -1,4 +1,4 @@
-require("toggleterm").setup{
-  open_mapping = [[<c-\>]],
-  direction = 'float',
-}
+-- require("toggleterm").setup{
+--   open_mapping = [[<c-\>]],
+--   direction = 'float',
+-- }

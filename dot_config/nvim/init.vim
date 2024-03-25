@@ -191,13 +191,13 @@ Plug 'norcalli/nvim-colorizer.lua' " showing colors preview for color codes
 Plug 'nvim-lualine/lualine.nvim'
 " Plug 'sbdchd/neoformat'
 
-Plug 'akinsho/toggleterm.nvim'
+" Plug 'akinsho/toggleterm.nvim'
 Plug 'onsails/lspkind-nvim' " vscode-like pictograms
 
 Plug 'lewis6991/gitsigns.nvim'
 
 Plug 'jose-elias-alvarez/null-ls.nvim' " Neovim and LSP bridge
-Plug 'folke/trouble.nvim'
+" Plug 'folke/trouble.nvim'
 
 " Plug 'neoclide/vim-jsx-improve'
 " Plug 'MaxMEllon/vim-jsx-pretty'
@@ -212,6 +212,8 @@ Plug 'glepnir/lspsaga.nvim', { 'branch': 'main' } " LSP UI
 
 Plug 'her/synicons.vim'
 Plug 'ryanoasis/vim-devicons' " devicons for nerdtree and others
+
+" Plug 'github/copilot.vim'
 
 " Deprecated/Updated
 " Plug 'stevearc/aerial.nvim'

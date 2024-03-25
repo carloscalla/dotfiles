@@ -50,11 +50,7 @@ require 'nvim-treesitter.configs'.setup {
   -- nvim-ts-autotag
   autotag = {
     enable = true,
-  },
-
-  -- nvim-ts-context-commentstring
-  context_commentstring = {
-    enable = true
+    enable_close_on_slash = false,
   },
 
   textobjects = {
@@ -102,3 +98,6 @@ require 'nvim-treesitter.configs'.setup {
 
 
 require 'treesitter-context'.setup {}
+
+vim.g.skip_ts_context_commentstring_module = true
+

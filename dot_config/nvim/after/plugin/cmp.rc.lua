@@ -27,10 +27,10 @@ cmp.setup({
   }, {
     { name = 'buffer' },
   }),
-  experimental = {
-    native_menu = false,
-    ghost_text = true,
-  },
+  -- experimental = {
+  --   native_menu = false,
+  --   ghost_text = true,
+  -- },
   formatting = {
     format = lspkind.cmp_format({
       mode = 'symbol_text', -- show only symbol annotations
