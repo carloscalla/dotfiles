@@ -3,3 +3,6 @@
 .undo
 .backup
 .swp
+
+# Lazygit state (local only)
+lazygit/.config/lazygit/state.yml
