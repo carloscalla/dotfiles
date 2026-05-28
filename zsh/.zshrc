@@ -115,6 +115,8 @@ alias rcedit="nvim ~/.zshrc"
 alias ll="ls -l"
 alias lla="ls -la"
 
+alias cafe="caffeinate -dimsu"
+
 # Git shortcuts
 alias gs="git status "
 alias tgs="time git status "
