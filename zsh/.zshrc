@@ -143,13 +143,13 @@ alias nvimrc="cd ~/.config/nvim/ && nvim ."
 eval $(thefuck --alias)
 
 # pnpm
-export PNPM_HOME="/Users/carlos.calla/Library/pnpm"
+export PNPM_HOME="$HOME/Library/pnpm"
 export PATH="$PNPM_HOME:$PATH"
 # pnpm end
 
 alias pn=pnpm
 
-alias notes='cd ~/carlos/obsidian-vaults/personal/ && nvim .'
+alias notes='cd ~/code/github/obsidian-vaults/personal/ && nvim .'
 
 alias lazyvim='NVIM_APPNAME="nvim-lazyvim" nvim'
 alias ksvim='NVIM_APPNAME="nvim-kickstart" nvim'
