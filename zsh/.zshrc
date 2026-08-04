@@ -194,6 +194,8 @@ prompt_dir() {
   prompt_segment blue $CURRENT_FG '%1~'
 }
 
+bindkey '^Y' autosuggest-accept
+
 export XDG_CONFIG_HOME="$HOME/.config"
 
 # export SNACKS_TMUX=true
