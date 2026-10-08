@@ -203,11 +203,6 @@ export XDG_CONFIG_HOME="$HOME/.config"
 
 export PATH="$HOME/.local/bin:$PATH"
 
-# export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"  # Added by n-install (see http://git.io/n-install-repo).
-
-# n (node version manager) - prepend to PATH to take priority over Homebrew
-# Only add to PATH if not already present - Although I still see it being added twice
-export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH="$N_PREFIX/bin:$PATH" 
 
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
