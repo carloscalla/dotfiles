@@ -203,7 +203,11 @@ export XDG_CONFIG_HOME="$HOME/.config"
 
 export PATH="$HOME/.local/bin:$PATH"
 
-
+# fnm
+FNM_PATH="$(brew --prefix fnm)/bin"
+if [ -d "$FNM_PATH" ]; then
+  eval "$(fnm env --use-on-cd --shell zsh)"
+fi
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
