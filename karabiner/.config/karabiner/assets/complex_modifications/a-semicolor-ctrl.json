@@ -1,0 +1,45 @@
+{
+  "title": "Home-row ctrl: a and ; (tap = letter, hold 200ms = control)",
+  "rules": [
+    {
+      "description": "a: tap = a, hold 200ms = left control",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": { "key_code": "a" },
+          "to_delayed_action": {
+            "to_if_canceled": [{ "key_code": "a" }],
+            "to_if_invoked": [{ "key_code": "vk_none" }]
+          },
+          "to_if_alone": [{ "halt": true, "key_code": "a" }],
+          "to_if_held_down": [{ "halt": true, "key_code": "left_control" }],
+          "parameters": {
+            "basic.to_if_alone_timeout_milliseconds": 200,
+            "basic.to_if_held_down_threshold_milliseconds": 200,
+            "basic.to_delayed_action_delay_milliseconds": 200
+          }
+        }
+      ]
+    },
+    {
+      "description": "; : tap = ;, hold 200ms = right control",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": { "key_code": "semicolon" },
+          "to_delayed_action": {
+            "to_if_canceled": [{ "key_code": "semicolon" }],
+            "to_if_invoked": [{ "key_code": "vk_none" }]
+          },
+          "to_if_alone": [{ "halt": true, "key_code": "semicolon" }],
+          "to_if_held_down": [{ "halt": true, "key_code": "right_control" }],
+          "parameters": {
+            "basic.to_if_alone_timeout_milliseconds": 200,
+            "basic.to_if_held_down_threshold_milliseconds": 200,
+            "basic.to_delayed_action_delay_milliseconds": 200
+          }
+        }
+      ]
+    }
+  ]
+}

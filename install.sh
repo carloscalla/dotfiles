@@ -11,7 +11,11 @@ DOTFILES_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 cd "$DOTFILES_DIR"
 
 # Available packages
-PACKAGES=(kitty tmux zsh nvim lazygit)
+PACKAGES=(kitty tmux zsh nvim lazygit karabiner)
+
+# Packages that must be stowed with --no-folding so stow links individual
+# files instead of whole directories (the app writes its own state next to them)
+NO_FOLDING_PACKAGES=(karabiner)
 
 # Color output
 GREEN='\033[0;32m'
@@ -50,7 +54,11 @@ fi
 for package in "${INSTALL_PACKAGES[@]}"; do
     if [ -d "$package" ]; then
         echo -e "${GREEN}✓${NC} Stowing $package"
-        stow "$package"
+        if [[ " ${NO_FOLDING_PACKAGES[*]} " =~ " $package " ]]; then
+            stow --no-folding "$package"
+        else
+            stow "$package"
+        fi
     else
         echo -e "${RED}✗${NC} Package '$package' not found"
     fi

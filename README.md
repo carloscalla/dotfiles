@@ -36,7 +36,13 @@ stow tmux     # Install only tmux config
 stow zsh      # Install only zsh config
 stow nvim     # Install only nvim config
 stow lazygit  # Install only lazygit config
+stow --no-folding karabiner  # Install only karabiner complex modifications
 ```
+
+> **Note:** always stow `karabiner` with `--no-folding` (`install.sh` does this
+> for you). Otherwise, if `~/.config/karabiner` doesn't exist yet, stow symlinks
+> the whole directory and Karabiner-Elements will write its `karabiner.json` and
+> backups into this repo.
 
 ## Available Packages
 
@@ -45,6 +51,7 @@ stow lazygit  # Install only lazygit config
 - **zsh** - Shell configuration (includes oh-my-zsh setup)
 - **nvim** - Neovim configuration (git submodule: kickstart.nvim)
 - **lazygit** - Git TUI configuration (themes, pagers, editor)
+- **karabiner** - Karabiner-Elements complex modifications
 
 ## Uninstalling
 
@@ -70,6 +77,8 @@ dotfiles/
 │   └── .config/nvim/  (git submodule)
 ├── lazygit/
 │   └── .config/lazygit/
+├── karabiner/
+│   └── .config/karabiner/
 └── install.sh
 ```
 

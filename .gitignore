@@ -6,3 +6,7 @@
 
 # Lazygit state (local only)
 lazygit/.config/lazygit/state.yml
+
+# Karabiner-Elements state (local only, only complex_modifications are tracked)
+karabiner/.config/karabiner/karabiner.json
+karabiner/.config/karabiner/automatic_backups/
